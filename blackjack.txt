@@ -1,0 +1,119 @@
+Enter game 
+
+buy-in
+
+
+shuffle the original deck of cards 
+while(playerTotal > 0)
+if(!bet)
+{
+	bet = make bet
+}
+else
+{
+	bet++; 
+}
+hand out the cards to both the player and the dealer 
+1. player must have two cards (player has now started keeping a deck of his cards)
+2. dealer must have two cards (dealer has now started keeping a deck of his cards)
+
+if the value of the two cards > 21
+	print out the total value of player's two cards 
+	print out the one card value of the dealer's (the other is hidden)
+	the player is busted! 
+	busted = true 
+	playerLose = true
+
+
+while busted == false 
+	print out the total value of player's two cards 
+	print out the one card value of the dealer's (the other is hidden)
+	hit or stand
+
+		if the player STANDS, the ball is passed over to the dealer
+			break 
+
+
+		if the player HITS (status == 1) 
+				player draws card 
+				if(original deck size < 12)
+				{
+					shuffle
+				}
+
+				if total > 21
+					busted = true 
+					playerLose = true
+					break 
+
+dealer's other card is revealed (print out both card values)
+print out the total value for the dealer 
+
+
+if(busted == false and playerLose == false)
+
+	if dealer's total > 21
+		dealer busts 
+		playerLose = false 
+		busted = true 
+		break 
+
+	if (dealer's value > player's value and busted != true) //if dealer's total is not over 21 and greater than player's 
+		playerLose = true 
+		player loses money 
+		break 
+	else if (dealer's value < player's value and busted != true) //if dealer's total is not over 21 and less than player's, then dealer hits until over 17 during which he stands
+
+		while(dealer's total < 17){
+			if(original deck size < 12)
+			{
+				shuffle
+			}
+			draw card 
+			total accumulates 
+		}
+
+		if dealer's total > 21 
+			playerLose = false
+			busted = true 
+			break 
+
+		if dealer's total < player's total and busted != true 
+			playerLose = false
+			busted = true
+			break 
+		else if dealer's total > player's total and busted != true  
+			playerLose = true 
+			busted = true 
+			break 
+		else if dealer's total == player's total and busted != true  
+			//push 
+			tie = true 
+			break 
+	else if dealer's value == player's total and busted != true  
+		//push 
+		tie = true
+		break 
+
+	break
+
+if(tie == true)
+	//player neither loses or wins money 
+	it's a push/tie!
+
+if(playerLose == false)	
+	//win = 1.5*bet amount 
+	//playerTotal += win
+	//print "you win!"
+	win amount:__
+	current playerTotal
+
+if(playerLose == true)
+	//loss = bet amount 
+	//playerTotal -= loss
+	loss amount:__
+	current playerTotal 
+
+
+
+
